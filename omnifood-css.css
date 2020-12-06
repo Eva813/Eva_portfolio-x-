@@ -1,3 +1,8 @@
+/* ------------------------------ */
+/* basic setup */
+/* ------------------------------*/
+
+
 *{
   margin: 0;
   padding: 0;
@@ -12,3 +17,166 @@ html{
   text-rendering: optimizeLegibility;
   /* 繪制文本時易讀性優先，會啟用字距調整和連字 */
 }
+
+/* ------------------------------ */
+/* reuseable componets */
+/* ------------------------------*/
+
+
+.row{
+  /* content will be in rows */
+  /* 只有這邊是用px，之後的margin等設定都會用% */
+max-width: 1140px; 
+margin:0 auto;
+/* 讓左右的距離能夠平均分散，使其置中 */
+
+}
+
+/* ------------------------------ */
+/* headings */
+/* ------------------------------*/
+
+.hero-text-box h1{
+margin-top: 0;
+margin-bottom: 20px;
+color: #fff;
+/* 這裏的字體大小用百分比，是為了相對於一開始設定font-size: 20px;，以他的百分比來計算 */
+font-size: 240%;
+font-weight: 400;
+letter-spacing: 1px;
+ text-transform: uppercase; /*將字母改為大寫 */
+ word-spacing: 3px;
+}
+
+/* ------------------------------ */
+/* buttons */
+/* ------------------------------*/
+
+/* 讓連結與點選後會改變狀態的這情形，不要發生 */
+
+.btn:link,.btn:visited{
+  display: inline-block;
+  text-decoration: none;
+padding: 10px 15px;
+border-radius: 200px;
+
+ transition: background-color 0.5s,border 0.5s,color 0.5s;
+
+}
+
+
+.btn-full:link,.btn-full:visited{
+  /* UI flat color tool */
+  background-color: #e67e22;
+  border: 1px solid #e67e22 ;
+  color: #fff;
+}
+
+.btn-ghost:link,.btn-ghost:visited{
+  border: 1px solid #e67e22 ;
+  color:#e67e22;
+  margin-left: 20px;
+
+}
+
+.btn:hover,.btn:active{
+
+ background-color: #cf6d17;
+
+}
+.btn-full:hover,.btn-full:active{
+  /* UI flat color tool */
+  
+  border: 1px solid #cf6d17 ;
+  color: #fff;
+}
+
+.btn-ghost:hover,.btn-ghost:active{
+  border: 1px solid #cf6d17 ;
+  color:#fff;
+
+}
+
+/* ------------------------------ */
+/* header */
+/* ------------------------------*/
+
+header{
+  background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,.5)) center center,
+   url(./Omnifood\ Contents/hero.jpg) no-repeat center center/cover ;
+/* background-image:url(./Omnifood\ Contents/hero.jpg) ;
+background-size: cover;
+background-position: center; */
+  height: 100vh;
+}
+
+
+/* 讓hero-box置中 */
+
+/* .hero-text-box{
+  display: flex;
+  width: 1140px;
+  height: 100%;
+  flex-direction: column; 
+  
+   align-items: center; 
+  justify-content: center;
+} */
+.hero-text-box{
+  position: absolute;
+ 
+  width: 1140px;
+  top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+} 
+header .logo{
+height: 100px;
+width: auto;
+float: left;
+margin-top: 20px;
+}
+
+
+.main-nav{
+float: right;
+margin-top: 55px;
+
+}
+.main-nav li{
+display: inline-block;
+margin-left: 20px;
+
+}
+.main-nav li a:link,.main-nav li a:visited{
+text-decoration: none;
+font-weight: 400;
+font-size: 90%; /*想要18px，18px / 20px=0.9*/
+color: #fff;
+text-transform: uppercase;
+position: relative;
+padding-bottom: 5px;
+
+}
+
+.main-nav a::after{
+  content: '';
+  width: 100%;
+  position: absolute;
+  border: solid .5px rgba(230, 126, 34,.6);
+  left: 0;
+  bottom:0 ;
+  margin-top: 5px;
+  transform: scale(0);
+  transition: 0.5s;
+  
+}
+
+.main-nav li:hover a::after,.main-nav li:active a::after{
+transform: scale(1);
+
+}
+
+/* .main-nav li:hover a{
+  color:#e67e22;
+} */
