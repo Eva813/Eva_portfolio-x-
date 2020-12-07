@@ -18,6 +18,16 @@ html{
   /* 繪制文本時易讀性優先，會啟用字距調整和連字 */
 }
 
+/* 在meal區，我們用li，以及使用float來排列，導致他父層內容沒有被撐開，所以要使用clear */
+.clearfix{zoom: 1;}
+.clearfix:after{
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
 /* ------------------------------ */
 /* reuseable componets */
 /* ------------------------------*/
@@ -30,6 +40,11 @@ max-width: 1140px;
 margin:0 auto;
 /* 讓左右的距離能夠平均分散，使其置中 */
 
+}
+
+section{
+  padding: 80px 0;
+  /* margin: 80px 0; */
 }
 
 /* ------------------------------ */
@@ -64,7 +79,7 @@ letter-spacing: 1px;
   word-spacing: 3px;
 }
 /* 這裏的底線，他是設定block，讓他可以自動斷行 */
-.section-features h2::after{
+ .section-features h2::after{
   content: '';
   /* position: absolute; */
   display: block;
@@ -79,6 +94,7 @@ margin: 30px auto 0px auto;
 }
 
 .section-features h3{
+ 
   font-weight: 300;
   font-size: 110%;
   text-transform: uppercase;
@@ -86,9 +102,38 @@ margin: 30px auto 0px auto;
   margin-bottom: 15px;
 }
 
+/* 這裏的h2可以是共用 */
+
+.meal-steps h2{
+   font-size: 180%;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 30px;
+  word-spacing: 3px;
+ 
+}
+
+.meal-steps h2::after{
+  content: '';
+  /* position: absolute; */
+  display: block;
+  width: 100px;
+  height: 2px;
+/* border: 2px solid  #e67e22 ; */
+/* bottom: 0; */
+background-color: #e67e22  ;
+margin: 30px auto 0px auto;
+
+
+}
+
 /* ------------------------------ */
 /* paragraphs */
 /* ------------------------------*/
+
+
 
 .section-features .long-copy{
 width: 70%;
@@ -270,7 +315,7 @@ transform: scale(1);
 /* ------------------------------*/
 
 .section-features{
-  padding:60px 0 40px 0;
+  padding:60px 0 0px 0;
 }
 
 /* ------------------------------ */
@@ -281,7 +326,7 @@ transform: scale(1);
 width: 100%;
 } */
 .section-meals{
-  padding: 0;
+  padding:  0;
   
 }
 
@@ -312,4 +357,58 @@ opacity: 0.7;
 .meals-showcase figure:hover img{
   transform: scale(1);
   opacity: 1;
+}
+
+
+/* ------------------------------ */
+/* meal-steps */
+/* ------------------------------*/
+.meal-steps{
+  background: #f4f4f4;
+}
+.steps-box:first-child{
+  text-align: right;
+  padding: 3%;
+  margin-top: 30px;
+}
+.steps-box:last-child{
+  
+  padding: 3%;
+  /* 讓步驟的文字區，可以下降 */
+  margin-top: 70px;
+}
+
+.app-screen{
+  width: 40%;
+}
+.work-step{
+  display: inline-block;
+  margin-bottom: 50px;
+  
+}
+
+.work-step:last-of-type{
+  /* 是指第3步驟的下面 margin增加 */
+  margin-bottom: 65px;
+}
+.work-step div{
+
+  float: left;
+  color:#e67e22 ;
+  border: 2px solid #e67e22;
+  border-radius: 50%;
+
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  padding: 5px;
+  font-size: 150%;
+  margin-right: 25px;
+}
+
+
+.btn-app img{
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
 }
