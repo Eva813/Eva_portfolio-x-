@@ -69,7 +69,7 @@ letter-spacing: 1px;
  word-spacing: 3px;
 }
 
-.section-features h2{
+ h2{
   font-size: 180%;
   font-weight: 300;
   text-align: center;
@@ -79,7 +79,7 @@ letter-spacing: 1px;
   word-spacing: 3px;
 }
 /* 這裏的底線，他是設定block，讓他可以自動斷行 */
- .section-features h2::after{
+ h2::after{
   content: '';
   /* position: absolute; */
   display: block;
@@ -129,6 +129,17 @@ margin: 30px auto 0px auto;
 
 }
 
+
+.section-cities h3{
+ 
+  font-weight: 300;
+  font-size: 110%;
+  text-transform: uppercase;
+
+  margin-bottom: 15px;
+}
+
+
 /* ------------------------------ */
 /* paragraphs */
 /* ------------------------------*/
@@ -160,6 +171,9 @@ margin-bottom: 30px;
   padding:1% ;
 
 }
+.sectoin-cities .items{
+  padding: 1%;
+}
 
 
 /* ------------------------------ */
@@ -173,8 +187,20 @@ display: block;
   font-weight: 100;
 
 }
+/* ------------------------------ */
+/* links */
+/* ------------------------------*/
+a:link , a:visited {
+  text-decoration: none;
+ color: #e67e22;
+ border-bottom: 1px solid #e67e22 ;
+ transition: border-bottom .2s , color .2s;
 
-
+}
+a:hover,a:active{
+  color: #555;
+  border-bottom: 1px solid transparent ;
+}
 
 
 /* ------------------------------ */
@@ -406,9 +432,52 @@ opacity: 0.7;
   margin-right: 25px;
 }
 
+/*因為a有設定連結有底線，所以這裏的按鈕要有指向性，並取消底線 */
+
+.btn-app:link ,.btn-app:visited{
+  border: 0;
+}
 
 .btn-app img{
   height: 50px;
   width: auto;
   margin-right: 10px;
+}
+/* ------------------------------ */
+/* section-cities */
+/* ------------------------------*/
+.section-cities img{
+  width: 100%;
+  vertical-align: middle;
+  margin-bottom: 15px;
+}
+.section-cities .icon-small{
+  color: #e67e22;
+ display: inline-block;
+ text-align: center;
+ font-size: 120%;
+ margin-right: 10px;
+ 
+/*讓icon與文字，置中、對其*/
+ line-height: 120%;
+ vertical-align: middle;
+ margin-top: -5px;
+  
+}
+.section-cities .city-features{
+  margin-bottom: .5em;
+}
+
+
+/* ------------------------------ */
+/* section-testimonials */
+/* ------------------------------*/
+.section-testimonials {
+  background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.7)) center center, url(./Omnifood\ Contents/back-customers.jpg)no-repeat center center/cover ;
+  color: #fff;
+  background-attachment: fixed;
+}
+
+.section-testimonials blockquote{
+  color: #fff;
 }
