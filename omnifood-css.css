@@ -139,6 +139,13 @@ margin: 30px auto 0px auto;
   margin-bottom: 15px;
 }
 
+.section-plans h3{
+  font-weight: 300;
+  font-size: 110%;
+  text-transform: uppercase;
+
+  margin-bottom: 15px;}
+
 
 /* ------------------------------ */
 /* paragraphs */
@@ -190,14 +197,14 @@ display: block;
 /* ------------------------------ */
 /* links */
 /* ------------------------------*/
-a:link , a:visited {
+.section-cities a:link , .section-cities a:visited {
   text-decoration: none;
  color: #e67e22;
  border-bottom: 1px solid #e67e22 ;
  transition: border-bottom .2s , color .2s;
 
 }
-a:hover,a:active{
+.section-cities a:hover, .section-cities a:active{
   color: #555;
   border-bottom: 1px solid transparent ;
 }
@@ -452,7 +459,7 @@ opacity: 0.7;
   vertical-align: middle;
   margin-bottom: 15px;
 }
-.section-cities .icon-small{
+ .section-cities .icon-small{
   color: #e67e22;
  display: inline-block;
  text-align: center;
@@ -514,6 +521,72 @@ left: -5px;
 /* ------------------------------ */
 /* section-plans */
 /* ------------------------------*/
-.section-plans li{
+.section-plans{
+ background-color: #f4f4f4;
 
+}
+/* 增加plan-box的原因，是要讓它可以有白底、同樣寬度的盒子 */
+.section-plans .plan-box{
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 0 2px 2px #efefef;
+  /* (x軸[上下] y軸[左右] 模糊 顏色) */
+}
+/* 讓裡面的box進行調整 */
+.plan-box div{ 
+  padding:15px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.plan-price{
+  font-size: 300%;
+  margin-bottom: 10px;
+  /* 當字設定的比較大，就要讓font-weight變小，才好看 */
+  font-weight: 100;
+  color: #e67e22;
+}
+
+.plan-price span{
+font-size: 30%;
+/* 注意這裏的字型大小，是相對於父層的比例（不是內部一開始設定的20px） */
+
+font-weight: 300;
+}
+.plan-price-meal{
+  font-size: 80%;
+}
+
+.plan-box ul{
+ list-style: none;
+}
+
+.plan-box ul li{
+  margin-bottom: 15px;
+}
+.plan-box .icon-small{
+  color: #e67e22;
+ display: inline-block;
+ text-align: center;
+ font-size: 30%;
+ margin-right: 15px;
+
+
+/*讓icon與文字，置中、對其*/
+ line-height: 120%;
+ vertical-align: middle;
+ margin-top: -5px;
+  
+}
+
+.plan-box div:first-child{
+  background-color:#fcfcfc ;
+  border-top-left-radius:5px  ;
+  border-top-right-radius: 5px;
+}
+/* 使按鈕置中 */
+.plan-box div:last-child{
+  line-height: 1;
+  text-align: center;
+  border-bottom: none;
 }

@@ -14,7 +14,7 @@
 
   <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
-  <!-- <script src="https://kit.fontawesome.com/e8c7317cfe.js" crossorigin="anonymous"></script> -->
+  <script src="https://kit.fontawesome.com/e8c7317cfe.js" crossorigin="anonymous"></script>
   <!-- font-family: 'Lato', sans-serif; -->
 </head>
 
@@ -314,28 +314,28 @@
         <div class="plan-box">
           <div>
             <h3>Premium</h3>
-            <p class="plan-price">$399 /per month</p>
+            <p class="plan-price">$399 <span> / month </span></p>
             <p class="plan-price-meal">That’s only 13.30$ per meal</p>
           </div>
           <div>
             <ul>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>1 meal every day
+                <i class="fas fa-check icon-small"></i>1 meal every day
               </li>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>Order 24/7
+                <i class="fas fa-check icon-small"></i>Order 24/7
               </li>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>Access to newest creations
+                <i class="fas fa-check icon-small"></i>Access to newest creations
               </li>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>Free delivery
+                <i class="fas fa-check icon-small"></i>Free delivery
               </li>
             </ul>
 
           </div>
           <div>
-            <a href="#" class="btn btn-full">Sign uo now </a>
+            <a href="#" class="btn btn-full">Sign up now </a>
           </div>
 
 
@@ -349,29 +349,29 @@
         <div class="plan-box">
           <div>
             <h3>Pro</h3>
-            <p class="plan-price">$149/per month</p>
+            <p class="plan-price">$149 <span>/ month </span></p>
             <p class="plan-price-meal">That’s only 14.90$ per meal</p>
           </div>
           <div>
             <ul>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>1 meal 10 days/month
+                <i class="fas fa-check icon-small"></i>1 meal 10 days/month
               </li>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>Order 24/7
+                <i class="fas fa-check icon-small"></i>Order 24/7
               </li>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>Access to newest creations
+                <i class="fas fa-check icon-small"></i>Access to newest creations
               </li>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>Free delivery
+                <i class="fas fa-check icon-small"></i>Free delivery
               </li>
             </ul>
 
 
           </div>
           <div>
-            <a href="#" class="btn btn-ghost">Sign uo now </a>
+            <a href="#" class="btn btn-ghost">Sign up now </a>
           </div>
 
         </div>
@@ -386,22 +386,22 @@
         <div class="plan-box">
           <div>
             <h3>Starter</h3>
-            <p class="plan-price">$19 / per meal</p>
-            <p class="plan-price-meal">That’s only 14.90$ per meal</p>
+            <p class="plan-price">$19 <span>/ meal</span></p>
+            <p class="plan-price-meal">&nbsp;</p>
           </div>
           <div>
             <ul>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>1 meal
+                <i class="fas fa-check icon-small"></i>1 meal
               </li>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>Order from 8 am to 12 pm
+                <i class="fas fa-check icon-small"></i>Order from 8 am to 12 pm
               </li>
               <li>
-                <ion-icon name="close-outline " class="icon-p"></ion-icon>
+                <i class="fas fa-times icon-small"></i>
               </li>
               <li>
-                <ion-icon name="checkmark-outline " class="icon-p"></ion-icon>Free delivery
+                <i class="fas fa-check icon-small"></i>Free delivery
               </li>
             </ul>
 
@@ -409,7 +409,7 @@
           </div>
 
           <div>
-            <a href="#" class="btn btn-ghost">Sign uo now </a>
+            <a href="#" class="btn btn-ghost">Sign up now </a>
           </div>
         </div>
 
@@ -429,6 +429,110 @@
   </section>
 
 
+  <!-- selected 被預設選的-->
+  <section class="form">
+    <div class="row">
+      <h2>We're happy to hear from you</h2>
+    </div>
+    <div class="row">
+      <form action="#" method="POST" class="contact-form">
+        <div class="row">
+
+          <!-- lable的for與input的id設一樣的，當點選標籤時，會同樣選擇到該輸入框 -->
+          <div class="col span-1-of-3">
+            <label for="name">name</label>
+          </div>
+
+          <div class="col span-2-of-3 ">
+            <input type="text" name="name" id="name" placeholder="Your name" required>
+          </div>
+
+        </div>
+        <div class="row">
+
+          <div class="col span-1-of-3">
+            <label for="email">Email</label>
+          </div>
+
+          <div class="col span-2-of-3 ">
+            <input type="email" name="email" id="email" placeholder="Your email" required>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col span-1-of-3">
+            <label for="find-us">How did you find us?</label>
+          </div>
+
+          <div class="col span-2-of-3 ">
+            <select name="find-us" id="find-us">
+              <option value="friends" selected>Friends</option>
+              <option value="search">Search engine</option>
+              <option value="ad">Advertisement</option>
+              <option value="other">Other</option>
+
+            </select>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+
+          <div class="col span-1-of-3">
+            <label for="">Newsletter?</label>
+          </div>
+
+          <div class="col span-2-of-3 ">
+            <input type="checkbox" name="news" id="news" checked> Yes,please
+          </div>
+        </div>
+
+
+
+        <div class="row">
+
+          <div class="col span-1-of-3">
+            <label for="message">Drop us a line</label>
+          </div>
+
+          <div class="col span-2-of-3 ">
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+
+          <div class="col span-1-of-3">
+            <label for="">&nbsp;</label>
+          </div>
+
+          <div class="col span-2-of-3 ">
+            <input type="submit" value="Send it!">
+          </div>
+        </div>
+
+
+      </form>
+
+
+
+    </div>
+
+
+
+
+
+  </section>
+
+
+
+
+
 
 
 
@@ -440,30 +544,14 @@
 
 <!-- 
   
-Section 6: Sign up and pricing plans
-Title: 
+Section 7: Contact form
+Title: We're happy to hear from you
 
-Plan 1: 
-
-
-
-
-
-
-
-Plan 2: 
-
-
-
-
-
-Free delivery
-
-Plan 3: 
-
-
-
-Free delivery
-
+Fields to include:
+Name
+Email
+How did you find us?
+Newsletter
+Drop us a line
 
  -->
