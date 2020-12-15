@@ -627,7 +627,7 @@ input[type=checkbox]{
 /* footer */
 /* ------------------------------*/
 
-footer{
+ footer{
   background-color: #333;
   padding: 50px;
   font-size: 80%;
@@ -643,7 +643,7 @@ footer .footer-nav{
 .footer-nav li,.socilmedia-link li{
   display: inline-block;
   margin-right: 20px;
-}
+} 
 
 /* 去除最右邊的margin */
 
@@ -695,4 +695,4 @@ transition: color .3s;
 }
 .logo-facebook:hover{
   color: #3b5998;
-}
+} 
