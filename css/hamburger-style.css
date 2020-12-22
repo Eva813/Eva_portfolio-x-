@@ -131,7 +131,7 @@ top: 0;
 z-index: 50;
 }
 .nav-list{
-  background-color: #ccc;
+  /* background-color: #ccc; */
 list-style: none;
 width: 80%;
 margin: auto;
@@ -143,4 +143,92 @@ display: flex;
 justify-content: space-evenly;
 align-items:center;
 
+}
+
+/* .nav-link 上層要設置perspective */
+
+.nav-list li{
+  perspective: 500px;
+}
+
+.nav-link{
+  text-decoration: none;
+  font-family: 'Slabo 27px',serif ;
+  text-transform: uppercase;
+  color: #ccc;
+  background-color: #000;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+
+  position: relative;
+  transform-style: preserve-3d;
+
+  transition: transform .3s;
+  display: block;
+
+  /* 因hover後位置會改變 */
+transform-origin: top;
+
+}
+
+/* 這裡要注意，我們設了hover後，依然沒有反應，是因為link的預設是inline，而我們2個都是inline元素就不會使他產生反應 */
+
+.nav-link:hover{
+  transform: rotateX(90deg);
+}
+
+
+.nav-link::after{
+ content: attr(data-text);
+ position: absolute;
+ left:0;
+ bottom:-100%;
+ background-color: #000;
+ padding: inherit;
+ color:#16c3cf;
+ 
+ transform: rotateX(-90deg);
+
+ /* 物件遠離主要的nav，是因為origin of transform is center，而物件是根據這個來旋轉 */
+
+ transform-origin: top;
+
+}
+
+
+.bottom-nav{
+  width: 100%;
+/* 因為top-nav高度是15vh */
+
+  height: 85vh;
+background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url(/hamburger-images/nav-bg.jpeg) no-repeat  50% -15vh;  
+
+
+background-size: cover;
+
+/* 調整圖片錯位問題 */
+position:fixed;
+bottom: 0;
+
+}
+
+.icons{
+  position: absolute;
+  /* 父層已經有設定fixed */
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ list-style: none;
+ display: flex;
+
+ width: 60%;
+ justify-content: space-between;
+
+
+}
+
+
+.icon-link i{
+ color: #fff;
+ font-size: 60px;
 }
