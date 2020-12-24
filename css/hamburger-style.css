@@ -138,7 +138,7 @@ transform: rotateZ(45deg);
   top: 0px;
  right: 0px;
 
-  transform: rotateY(-90deg);  /*會使他消失 */
+   transform: rotateY(-90deg); /* 會使他消失 */
 
   transform-origin:right;
 
@@ -147,10 +147,9 @@ transform: rotateZ(45deg);
 .top-nav{
 height: 15vh;
 width: 100%;
-background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url(/hamburger-images/nav-bg.jpeg) no-repeat  50% 0px;  /* 50%:x軸要在中間 ; 0px: y軸，是希望圖片可以放在最上面 */
+background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url(./hamburger-images/nav-bg.jpeg) no-repeat  50% 0px;  /* 50%:x軸要在中間 ; 0px: y軸，是希望圖片可以放在最上面 */
 background-size: cover;
 position: fixed;
-
 
 /* 將背景調回來後，要重新設定top位置<讓他消失 */
 
