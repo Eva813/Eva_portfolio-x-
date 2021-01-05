@@ -1,4 +1,4 @@
-$("#form").submit(function (e) {
+$("#email").blur(function (e) {
   e.preventDefault();
   var email_input = $("#email").val();
   result = checkEmail(email_input);
@@ -20,43 +20,55 @@ function checkEmail(email) {
 
 
 // 使用者名稱
-$("#form").submit(function (e) {
-  e.preventDefault();
+$("#username").blur(function () {
+
   var username_input = $("#username").val();
   var message_username = $("#username").siblings('small').first();
 
 
   if (username_input.length < 3) {
     message_username.text("Username must be at least 3 characters").css('visibility', 'visible');
+
   } else if (username_input.length > 15) {
     message_username.text("Username must be at less than 15 characters").css('visibility', 'visible');
+
   } else {
-    message_username.css('visibility', 'hidden')
-
-  };
+    message_username.css('visibility', 'hidden');
 
 
+  }
 
+  $("#username").focus(function (e) {
+    e.preventDefault();
+    var username_input = $("#username").val();
+    var message_username = $("#username").siblings('small').first();
+
+
+    if (username_input.length < 3) {
+      $(this).addClass("error");
+    } else if (username_input.length > 15) {
+      $(this).addClass("error");
+    } else {
+      $(this).addClass("success");
+    }
+  })
+
+  // $("#username").focus(function () {
+  //   if (username_input.length < 3) {
+  //     $("#username").addClass("error");
+  //   } else if (username_input.length > 15) {
+  //     $("#username").addClass("error");
+  //   } else {
+  //     $("#username").addClass("success");
+  //   }
 
 })
 
 //正確時，外框顯示綠色，錯誤時紅色 
-$("#form").submit(function (e) {
-  e.preventDefault();
-  var username_input = $("#username").val();
-  if (username_input.length < 3) {
-    $("#username").addClass("error");
-  } else if (username_input.length > 15) {
-    $("#username").addClass("error");
-  } else {
-    $("#username").addClass("success");
-  }
-
-})
 
 
 //密碼
-$("#form").submit(function (e) {
+$("#password").blur(function (e) {
 
   e.preventDefault();
   var password_input = $("#password").val();
@@ -73,7 +85,7 @@ $("#form").submit(function (e) {
 })
 
 
-$("#form").submit(function (e) {
+$("#password").blur(function (e) {
 
   e.preventDefault();
   var password2_input = $("#password2").val();

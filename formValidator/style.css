@@ -65,12 +65,18 @@ font-size: 14px;
 /******************************/
 /*待會js要用來驗證輸入正確，或錯誤*/
 /******************************/
-.form-control.success input{
+input.success {
   border-color: var(--success-color);
 }
-.form-control.error input{
+input.error  {
   border-color: var(--error-color);
 }
+
+
+/* .form-control.error  input{
+  border-color: var(--error-color);
+} */
+
 .form-control small{
   color:var(--error-color) ;
   position: absolute;
@@ -96,3 +102,7 @@ font-size: 14px;
   margin-top: 20px;
   width: 100%;
 }
+
+/*
+
+  })*/
