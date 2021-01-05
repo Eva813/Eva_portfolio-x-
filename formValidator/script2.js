@@ -17,7 +17,12 @@ function checkEmail(email) {
   return emailRule.test();
 }
 
-
+function error() {
+  $("#username").addClass("error");
+}
+function success() {
+  $("#username").addClass("success");
+}
 
 // 使用者名稱
 $("#username").blur(function () {
@@ -35,8 +40,10 @@ $("#username").blur(function () {
   } else {
     message_username.css('visibility', 'hidden');
 
-
   }
+
+
+
 
   //正確時，外框顯示綠色，錯誤時紅色
   $("#username").focus(function (e) {
