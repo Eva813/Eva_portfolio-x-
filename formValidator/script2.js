@@ -38,6 +38,7 @@ $("#username").blur(function () {
 
   }
 
+  //正確時，外框顯示綠色，錯誤時紅色
   $("#username").focus(function (e) {
     e.preventDefault();
     var username_input = $("#username").val();
