@@ -65,17 +65,14 @@ font-size: 14px;
 /******************************/
 /*待會js要用來驗證輸入正確，或錯誤*/
 /******************************/
-input.success {
+.form-control.error  input {
   border-color: var(--success-color);
 }
-input.error  {
-  border-color: var(--error-color);
-}
 
 
-/* .form-control.error  input{
+ .form-control.error  input{
   border-color: var(--error-color);
-} */
+} 
 
 .form-control small{
   color:var(--error-color) ;

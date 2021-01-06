@@ -1,7 +1,9 @@
+//keyup
+
 // email驗證
 function checkEmail(email) {
   var emailRule = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return emailRule.test();
+  return emailRule.test(email);
 }
 $("#email").blur(function (e) {
   e.preventDefault();
@@ -11,13 +13,13 @@ $("#email").blur(function (e) {
   var message = $("#email").siblings('small').first();
   // console.log(message.text());
   if (result) {
-    $(this).focus(function () {
-      $(this).css('border-color', '#e74c3c');
+    $("#email").focus(function () {
+      $(this).css('border-color', '#2ecc71');
     })
     message.css('visibility', 'hidden');
   } else {
-    $(this).focus(function () {
-      $(this).css('border-color', '#2ecc71');
+    $("#email").focus(function () {
+      $(this).css('border-color', '#e74c3c');
     })
     message.text("Email is not valid").css('visibility', 'visible');
   }
@@ -57,34 +59,6 @@ $("#username").blur(function () {
     message_username.css('visibility', 'hidden');
 
   }
-
-
-
-
-  //正確時，外框顯示綠色，錯誤時紅色
-  // $("#username").focus(function (e) {
-  //   e.preventDefault();
-  //   var username_input = $("#username").val();
-  //   var message_username = $("#username").siblings('small').first();
-
-
-  //   if (username_input.length < 3) {
-  //     $(this).addClass("error");
-  //   } else if (username_input.length > 15) {
-  //     $(this).addClass("error");
-  //   } else {
-  //     $(this).addClass("success");
-  //   }
-  // })
-
-  // $("#username").focus(function () {
-  //   if (username_input.length < 3) {
-  //     $("#username").addClass("error");
-  //   } else if (username_input.length > 15) {
-  //     $("#username").addClass("error");
-  //   } else {
-  //     $("#username").addClass("success");
-  //   }
 
 })
 
