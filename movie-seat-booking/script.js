@@ -68,9 +68,9 @@ function updateSelectedCount() {
     //座位的索引：被選擇座位的陣列.map=>去回傳原本沒被佔用座位的索引
   })
 
-  localStorage.setItem
+  localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
 
-  console.log(seatsIndex);
+  //console.log(seatsIndex);
 
   $('#count').text(selectedSeatsCount);
   $('#total').text(selectedSeatsCount * ticketPrice);
