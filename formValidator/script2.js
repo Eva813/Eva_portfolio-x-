@@ -1,3 +1,8 @@
+// email驗證
+function checkEmail(email) {
+  var emailRule = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return emailRule.test();
+}
 $("#email").blur(function (e) {
   e.preventDefault();
   var email_input = $("#email").val();
@@ -6,16 +11,19 @@ $("#email").blur(function (e) {
   var message = $("#email").siblings('small').first();
   // console.log(message.text());
   if (result) {
-    message.css('visibility', 'hidden')
+    $(this).focus(function () {
+      $(this).css('border-color', '#e74c3c');
+    })
+    message.css('visibility', 'hidden');
   } else {
-    message.text("email is not valid").css('visibility', 'visible');
+    $(this).focus(function () {
+      $(this).css('border-color', '#2ecc71');
+    })
+    message.text("Email is not valid").css('visibility', 'visible');
   }
 
-})
-function checkEmail(email) {
-  var emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
-  return emailRule.test();
-}
+});
+
 
 function error() {
   $("#username").addClass("error");
@@ -26,18 +34,26 @@ function success() {
 
 // 使用者名稱
 $("#username").blur(function () {
-
   var username_input = $("#username").val();
   var message_username = $("#username").siblings('small').first();
 
-
   if (username_input.length < 3) {
+    $("#username").focus(function () {
+      $(this).css('border-color', '#e74c3c');
+    })
     message_username.text("Username must be at least 3 characters").css('visibility', 'visible');
 
+
   } else if (username_input.length > 15) {
+    $("#username").focus(function () {
+      $(this).css('border-color', '#e74c3c');
+    })
     message_username.text("Username must be at less than 15 characters").css('visibility', 'visible');
 
   } else {
+    $("#username").focus(function () {
+      $(this).css('border-color', '#2ecc71');
+    })
     message_username.css('visibility', 'hidden');
 
   }
@@ -46,20 +62,20 @@ $("#username").blur(function () {
 
 
   //正確時，外框顯示綠色，錯誤時紅色
-  $("#username").focus(function (e) {
-    e.preventDefault();
-    var username_input = $("#username").val();
-    var message_username = $("#username").siblings('small').first();
+  // $("#username").focus(function (e) {
+  //   e.preventDefault();
+  //   var username_input = $("#username").val();
+  //   var message_username = $("#username").siblings('small').first();
 
 
-    if (username_input.length < 3) {
-      $(this).addClass("error");
-    } else if (username_input.length > 15) {
-      $(this).addClass("error");
-    } else {
-      $(this).addClass("success");
-    }
-  })
+  //   if (username_input.length < 3) {
+  //     $(this).addClass("error");
+  //   } else if (username_input.length > 15) {
+  //     $(this).addClass("error");
+  //   } else {
+  //     $(this).addClass("success");
+  //   }
+  // })
 
   // $("#username").focus(function () {
   //   if (username_input.length < 3) {
@@ -82,10 +98,20 @@ $("#password").blur(function (e) {
   var password_input = $("#password").val();
   var message_password = $("#password").siblings('small').first();
   if (password_input.length < 8) {
+    $(this).focus(function () {
+      $(this).css('border-color', '#e74c3c');
+    })
     message_password.text("Password must be at least 8 characters").css('visibility', 'visible');
   } else if (password_input.length > 16) {
+    $(this).focus(function () {
+      $(this).css('border-color', '#e74c3c');
+    })
     message_password.text("Password must be at less than 16 characters").css('visibility', 'visible');
   } else {
+    $(this).focus(function () {
+      $(this).css('border-color', '#2ecc71');
+    });
+
     message_password.css('visibility', 'hidden')
   }
 
@@ -93,16 +119,25 @@ $("#password").blur(function (e) {
 })
 
 
-$("#password").blur(function (e) {
+$("#password2").blur(function (e) {
 
   e.preventDefault();
   var password2_input = $("#password2").val();
   var message_password2 = $("#password2").siblings('small').first();
   if (password2_input.length < 8) {
+    $(this).focus(function () {
+      $(this).css('border-color', '#e74c3c');
+    })
     message_password2.text("Password2 must be at least 8 characters").css('visibility', 'visible');
   } else if (password2_input.length > 16) {
+    $(this).focus(function () {
+      $(this).css('border-color', '#e74c3c');
+    })
     message_password2.text("Password2 must be at less than 16 characters").css('visibility', 'visible');
   } else {
+    $(this).focus(function () {
+      $(this).css('border-color', '#2ecc71');
+    });
     message_password2.css('visibility', 'hidden')
   }
 
