@@ -8,7 +8,7 @@ let ticketPrice = +$('#movie').val();
 
 
 
-//儲存電影索引以及價格
+//4.儲存電影索引以及價格
 function setMovieData(movieIndex, moviePrice) {
   localStorage.setItem('selectedMovieIndex', movieIndex);
   localStorage.setItem('selectedMoviePrice', moviePrice);
@@ -17,7 +17,7 @@ function setMovieData(movieIndex, moviePrice) {
 
 
 
-//電影選擇事件movie
+//3.電影選擇事件movie
 $("#movie").change(function (e) {
   ticketPrice = +e.target.value;
   //console.log(ticketPrice);
@@ -55,7 +55,7 @@ function updateSelectedCount() {
   $('#total').text(selectedSeatsCount * ticketPrice);
 }
 
-//從localstorage取的資料，以及populateUI
+//5. 從localstorage取的資料，以及populateUI
 //[How to Use forEach() to Iterate an Array in JavaScript](https://dmitripavlutin.com/foreach-iterate-array-javascript/)
 //取得選擇的座位
 function populateUI() {
@@ -70,15 +70,17 @@ function populateUI() {
       }
     });
   }
-
+  //電影選擇的存取
   var selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
 
   if (selectedMovieIndex !== null) {
-    $('#movie').selectedIndex = selectedMovieIndex;
+    $('#movie')[0].selectedIndex = selectedMovieIndex;
   }
+  console.log($('#movie')[0].selectedIndex);
+  //=>一開始使用$('#movie').selectedIndex 一直擷取不到資料,Undefined
 
-  // console.log(selectedMovieIndex)
 }
+
 
 
 
@@ -96,14 +98,8 @@ $(".container").click(function (e) {
 
 });
 
+//初始
+updateSelectedCount();
 
-// let arr = [1, 2, 3];
-// let arr2 = [...arr, 4, 5];
 
-// //使用map要創造一個新變數
-// let arr3 = arr2.map(function (item) {
-//   return item * 2;
-// })
-// console.log(arr3);
-// //arry [2,4,6,8,10]
 
