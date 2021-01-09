@@ -37,7 +37,11 @@ function populateList(plates = [], platesList) {
     <li>
     
     <input type="checkbox" data-index=${i} id="item${i}"  ${plate.done ? 'checked' : ''} />
-    <label for="item${i}">${plate.text}</label></li>`;
+    <label for="item${i}">${plate.text}</label>
+    
+    
+   
+    </li>` ;
   }));
 }
 
@@ -58,6 +62,11 @@ function toggleDone(e) {
   localStorage.setItem('items', JSON.stringify(items));
   // 更新列表
   populateList(items, itemsList);
+
+
+
+
+
 }
 // 監聽click
 itemsList.click(toggleDone);
